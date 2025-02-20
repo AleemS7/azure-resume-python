@@ -2,12 +2,12 @@
 
 ## Live Demo
 
-- [https://aleemshaik.com/](#)
+- www.aleemshaik.com
 
 Welcome to my **Azure Resume Challenge** repository! This project is a full-stack cloud application that serves my interactive resume and implements a serverless visitor counter. Below is an overview of how everything is set up and the tools I used.
 
 ![Azure Architecture](images/AzureResume.drawio.png)
----
+
 
 ## Overview
 
@@ -19,7 +19,7 @@ Welcome to my **Azure Resume Challenge** repository! This project is a full-stac
 
 4. **CI/CD**: A GitHub Actions workflow automatically builds and deploys the front-end on each push to the main branch.
 
----
+
 
 ## Tools & Technologies
 
@@ -31,7 +31,7 @@ Welcome to my **Azure Resume Challenge** repository! This project is a full-stac
 - **Bash & Linux**: WSL Ubuntu command-line environment used for local development, Terraform deployment, and general scripting.
 
 
----
+
 
 ## Challenges Faced
 
@@ -39,7 +39,7 @@ Welcome to my **Azure Resume Challenge** repository! This project is a full-stac
 - **Networking**: Ensured a simple CNAME record approach for custom domain mapping after I encountered difficulties mapping an apex domain.
 - **Terraform State**: Had to manage large files and `.gitignore` complexities to avoid committing provider binaries.
 
----
+
 
 ## Future Additions
 
