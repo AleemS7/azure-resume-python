@@ -4,6 +4,8 @@
 
 - www.aleemshaik.com
 
+- Static Web App URL: https://brave-stone-05a9d490f.4.azurestaticapps.net/
+
 Welcome to my **Azure Resume Challenge** repository! This project is a full-stack cloud application that serves my interactive resume and implements a serverless visitor counter. Below is an overview of how everything is set up and the tools I used.
 
 ![Azure Architecture](images/AzureResume.drawio.png)
