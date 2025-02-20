@@ -1,0 +1,8 @@
+location                 = "eastus2"
+resource_group_name      = "rg-aleem-az-resume-python-prod-001"
+storage_account_name     = "alezpythresume001"
+api_resource_group_name  = "rg-aleem-az-resume-python-api-prod-001"
+api_storage_account_name = "alepythresumeapi001"
+cosmosdb_name            = "ale-cosmosdb-resume-prod"
+cosmosdb_sql_db_name     = "ale-cosmosdb-sqldb-resume-prod"
+subscription_id          = "c0d0d3fd-bdc4-4043-8aed-3a7c1fc7b12e"

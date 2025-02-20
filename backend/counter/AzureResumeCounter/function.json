@@ -1,0 +1,41 @@
+{
+  "scriptFile": "__init__.py",
+  "bindings": [
+    {
+      "authLevel": "function", 
+      "type": "httpTrigger",
+      "direction": "in",
+      "name": "req",
+      "methods": [
+        "get",
+        "post"
+      ]
+    },
+    {
+      "type": "http",
+      "direction": "out",
+      "name": "$return"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "in",
+      "name": "inputDocument",
+      "databaseName": "ale-cosmosdb-sqldb-resume-prod",
+      "containerName": "resumecounter",
+      "connection": "AZURE_RESUME_COSMOSDB_CONNECTION", 
+      "id": "1",
+      "partitionKey": "1"
+    },
+    {
+      "type": "cosmosDB",
+      "direction": "out",
+      "name": "outputDocument",
+      "databaseName": "ale-cosmosdb-sqldb-resume-prod",
+      "containerName": "resumecounter",
+      "connection": "AZURE_RESUME_COSMOSDB_CONNECTION", 
+      "id": "1",
+      "partitionKey": "1",
+      "createIfNotExists": false
+    }
+  ]
+}

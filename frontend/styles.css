@@ -1,0 +1,476 @@
+:root {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 3.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 3.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: hsl(var(--background));
+  color: hsl(var(--foreground));
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.container {
+  width: 100%;
+  max-width: 64rem;
+  padding: 2rem;
+  position: relative;
+  z-index: 10;
+}
+
+.content {
+  max-width: 48rem;
+  margin: 0 auto;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+
+h2 {
+  font-size: 1.75rem;
+  font-weight: 600;
+  margin-bottom: 1.25rem;
+  color: hsl(var(--primary));
+}
+
+h3 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.subtitle {
+  font-size: 1.25rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 2rem;
+}
+
+.education {
+  font-size: 1.125rem;
+  font-style: italic;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 2rem;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.link:hover {
+  color: hsl(var(--primary));
+}
+
+.icon {
+  width: 1rem;
+  height: 1rem;
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: hsl(var(--primary));
+}
+
+.view-count {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.text-muted {
+  color: hsl(var(--muted-foreground));
+}
+
+#cursor-light {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 30;
+  opacity: 0;
+  transition: opacity 0.3s;
+  background: radial-gradient(
+    600px circle at var(--mouse-x) var(--mouse-y),
+    rgba(29, 78, 216, 0.15),
+    transparent 80%
+  );
+}
+
+.section {
+  margin-bottom: 3rem;
+}
+
+/* About Me section */
+#about .subtitle {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+
+/* Certifications section */
+.badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background-color: hsl(var(--secondary));
+  border-radius: 9999px;
+  font-size: 0.75rem;
+}
+
+.badge-icon {
+  width: 1.25rem;
+  height: 1.25rem;
+}
+
+/* Skills section */
+.skills-grid {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+.skill-category {
+  flex: 1;
+}
+
+.skill-category h3 {
+  font-size: 1.1rem;
+  margin-bottom: 0.75rem;
+  color: hsl(var(--primary));
+}
+
+.skill-category ul {
+  list-style-type: none;
+  padding-left: 0;
+}
+
+.skill-category li {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  margin-bottom: 0.5rem;
+}
+
+/* Education section */
+.education-item {
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.education-item h3 {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+  color: hsl(var(--primary));
+}
+
+.education-item p {
+  margin-bottom: 0.25rem;
+  font-size: 0.9rem;
+}
+
+.education-item .degree {
+  font-weight: 500;
+}
+
+.education-item .graduation-date {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-style: italic;
+  font-size: 0.9rem;
+}
+
+.education-item .gpa {
+  font-style: italic;
+}
+
+.coursework-heading {
+  font-weight: 500;
+  margin-top: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.coursework-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.coursework-list li {
+  margin-bottom: 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+/* Experience section */
+.experience-item {
+  margin-bottom: 2rem;
+}
+
+.experience-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 0.5rem;
+}
+
+.experience-header span {
+  font-style: italic;
+  font-size: 0.9rem;
+  color: hsl(var(--muted-foreground));
+}
+
+.experience-item ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+}
+
+/* Projects section */
+.projects-container {
+  max-width: 48rem;
+  margin: 0 auto;
+}
+
+.projects-grid {
+  display: grid;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.project-card {
+  background-color: hsl(var(--card));
+  border-radius: 0.5rem;
+  padding: 1.5rem;
+  transition: all 0.2s ease;
+  cursor: pointer;
+  border: 1px solid hsl(var(--border));
+  position: relative;
+  overflow: hidden;
+}
+
+.project-card:hover {
+  transform: translateY(-2px);
+  background-color: hsl(var(--accent));
+  border-color: hsl(var(--accent-foreground));
+}
+
+.project-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom right,
+    rgba(255, 255, 255, 0.05),
+    transparent,
+    transparent
+  );
+  opacity: 0;
+  transition: opacity 0.2s ease;
+}
+
+.project-card:hover::before {
+  opacity: 1;
+}
+
+.project-card h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+  color: hsl(var(--card-foreground));
+}
+
+.project-card p {
+  color: hsl(var(--card-foreground));
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.project-tech {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  margin-top: 1rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid hsl(var(--border));
+}
+
+.project-date {
+  font-size: 0.75rem;
+  color: hsl(var(--muted-foreground));
+  display: block;
+  margin-top: 0.5rem;
+}
+
+.back-home {
+  display: flex;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .skills-grid {
+    flex-direction: column;
+  }
+
+  .skill-category {
+    margin-bottom: 1.5rem;
+  }
+
+  .education-item .graduation-date {
+    position: static;
+    display: block;
+    margin-bottom: 0.5rem;
+  }
+
+  .experience-header {
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 640px) {
+  h1 {
+    font-size: 2.5rem;
+  }
+
+  .subtitle {
+    font-size: 1rem;
+  }
+
+  .education {
+    font-size: 1rem;
+  }
+
+  .navigation {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+
+  .badges {
+    flex-direction: column;
+  }
+
+  .projects-grid {
+    gap: 1rem;
+  }
+
+  .view-count {
+    align-self: flex-end;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+}
+
+.nav-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.nav-link {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: hsl(var(--foreground));
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.nav-link:hover, .nav-link.active {
+  color: hsl(var(--primary));
+}
+
+.view-count {
+  font-size: 0.875rem;
+  color: hsl(var(--muted-foreground));
+  background-color: hsl(var(--secondary));
+  padding: 0.25rem 0.5rem;
+  border-radius: 9999px;
+  transition: opacity 0.3s ease;
+}
+
+
+
