@@ -38,7 +38,7 @@ Welcome to my **Azure Resume Challenge** repository! This project is a full-stac
 ## Challenges Faced
 
 - **Version Mismatch**: Originally tried a full C#/.NET backend but ran into isolation and version issues, so I switched to Python for a smoother setup.  
-- **Networking**: Ensured a simple CNAME record approach for custom domain mapping after I encountered difficulties mapping an apex domain.
+- **Networking**: Ensured a simple CNAME record approach for custom domain mapping after I encountered difficulties mapping an apex domain. Also had to flush DNS resolver cache due to previous domain mapping with vercel.
 - **Terraform State**: Had to manage large files and `.gitignore` complexities to avoid committing provider binaries.
 
 
